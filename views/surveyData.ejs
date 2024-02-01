@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons (folder found in assets/img) -->
+  <link href="/img/provo.jpg" alt="Provo logo" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- hrefs to other pages -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+    <title>Provo Mental Health</title>
+    <!-- Add any additional styles or link to a CSS file here -->
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <h1 class="logo"><a href="/">Provo Mental Health</a></h1><br>
+        <a href="/" class="logo"><img src="/img/provo.jpg" alt="" class="img-fluid"></a>
+  
+        <nav id="navbar" class="navbar">
+          <style>
+            .nav-link.scrollto.active {
+              background-color: lightsalmon;
+            }
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            th, td {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+          </style>
+          <ul>
+            <li><a class="nav-link scrollto active" href="/">Home</a></li>
+            <li><a class="nav-link scrollto" href="/loginPage">Login</a></li>
+            <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
+            <li><a class="nav-link scrollto " href="/surveyPage">Survey Page</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+  
+      </div>
+    </header>
+    <!-- surveyData.ejs -->
+<!-- comment-->
+  <h1>Survey Data</h1>
+
+  <!-- Dropdown for selecting distinct primary keys -->
+  <label for="surveyKey">Select Survey Key:</label>
+  <select id="surveyKey" name="surveyKey">
+    <% distinctSurveyKeys.forEach(key => { %>
+      <option value="<%= `${key.Timestamp}-${key.Age}-${key.Gender}` %>">
+        <%= `${new Date(key.Timestamp).toLocaleString()}, ${key.Age}, ${key.Gender}` %>
+      </option>
+    <% }); %>
+  </select>
+  <!-- Table for displaying all survey data -->
+  <table style="border: 1;">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Origin</th>
+        <th>Relationship Status</th>
+        <th>Occupation Status</th>
+        <th>Social Media Use</th>
+        <th>Mental Health Severity Score</th>
+        <th>Social Media Score</th>
+        <th>Average Time</th>
+        <th>Social Media Type</th>
+        <th>Organization Type</th>
+        <th>SM Without Purpose</th>
+        <th>SM Distracted</th>
+        <th>SM Restless</th>
+        <th>MH Distracted</th>
+        <th>MH Worries</th>
+        <th>MH Concentration</th>
+        <th>SM Comparison</th>
+        <th>SM Comparison Feeling</th>
+        <th>SM Validation</th>
+        <th>MH Depression</th>
+        <th>MH Activity Interest</th>
+        <th>MH Sleep</th>
+        <!-- Add more headers as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <% surveyData.forEach(data => { %>
+        <tr>
+          <td><%= new Date(data.Timestamp).toLocaleString() %></td>
+          <td><%= data.Age %></td>
+          <td><%= data.Gender %></td>
+          <td><%= data.Origin %></td>
+          <td><%= data.RelationshipStatus %></td>
+          <td><%= data.OccupationStatus %></td>
+          <td><%= data.SocialMediaUse %></td>
+          <td><%= data.MentalHealthSeverityScore %></td>
+          <td><%= data.SocialMediaScore %></td>
+          <td><%= data.AverageTime %></td>
+          <td><%= data.SocialMediaType %></td>
+          <td><%= data.OrgType %></td>
+          <td><%= data.SM_WithoutPurpose %></td>
+          <td><%= data.SM_Distracted %></td>
+          <td><%= data.SM_Restless %></td>
+          <td><%= data.MH_Distracted %></td>
+          <td><%= data.MH_Worries %></td>
+          <td><%= data.MH_Concentration %></td>
+          <td><%= data.SM_Comparison %></td>
+          <td><%= data.SM_ComparisonFeeling %></td>
+          <td><%= data.SM_Validation %></td>
+          <td><%= data.MH_Depression %></td>
+          <td><%= data.MH_ActivityInterest %></td>
+          <td><%= data.MH_Sleep %></td>
+          <!-- Add more columns as needed -->
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-info">
+                <h3>Provo Mental Health Organization</h3>
+                <p>
+                  445 W Center St <br>
+                  UT 84601, USA<br><br>
+                  <strong>Phone:</strong> +1 (801) 852-6120<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="https://twitter.com/UCHD" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="https://www.facebook.com/uchealth/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="https://www.instagram.com/provohealth/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/provo-canyon-behavioral-hospital-a49344141/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Enter Email below to download our highly recommended mental health app!</h4>
+              <form action="https://www.sanvello.com/" method="get">
+                <input type="email" name="email"><input type="submit" value="Subscribe">
+              </form>
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Provo Mental Health Organization</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+  
+    <!-- Vendor JS Files -->
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

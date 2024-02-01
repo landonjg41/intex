@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons (folder found in assets/img) -->
+  <link href="/img/provo.jpg" alt="Provo logo" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- hrefs to other pages -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+    <title>Survey Page</title>
+    <!-- Add any additional styles or link to a CSS file here -->
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: larger;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"],
+        input[type="range"] {
+            margin-top: 5px; /* Adjust this value to control the spacing above answer choices */
+        }
+
+        body {
+            background-color: rgb(211, 211, 211); 
+        }
+        a {
+            text-align: right;
+        }
+        .nav-link.scrollto.active {
+              background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <h1 class="logo"><a href="/">Provo Mental Health</a></h1><br>
+        <a href="/" class="logo"><img src="/img/provo.jpg" alt="" class="img-fluid"></a>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="loginPage">Login</a></li>
+            <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
+            <li><a class="nav-link scrollto " href="/">Home</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+  
+      </div>
+    </header>
+    <body style="text-align: center;">
+        <h1 style="text-align: center; text-decoration: underline;">Social Media vs Mental Health Survey</h1>
+        <br><br>
+    
+        <form action="/surveyPage" method="post">
+    
+            <label for="age">What is your age?</label>
+            <input type="number" id="age" name="age" required>
+            <br><br>
+    
+            <label for="gender">What is your gender?</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Trans">Trans</option>
+                <option value="Nonbinary">Nonbinary</option>
+                <option value="Unsure">Unsure</option>
+            </select>
+            <br><br>
+    
+            <label for="relationshipStatus">What is your Relationship Status?</label>
+            <select id="relationshipStatus" name="relationshipStatus" required>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="In a relationship">In a relationship</option>
+                <option value="Divorced">Divorced</option>
+            </select>
+            <br><br>
+    
+            <label for="occupationStatus">What is your Occupation Status?</label>
+            <select id="occupationStatus" name="occupationStatus" required>
+                <option value="School Student">School Student</option>
+                <option value="University Student">University Student</option>
+                <option value="Retired">Retired</option>
+                <option value="Salaried Worker">Salaried Worker</option>
+            </select>
+            <br><br>
+    
+            <label for="affiliatedOrganizations" class="checkbox-group">What type of organizations are you affiliated with? (select as many as apply)</label>
+            <div class="checkbox-group">
+            <label for="school"><input type="checkbox" id="school" name="affiliatedOrganizations[]" value="School"> School</label>
+
+            <label for="university"><input type="checkbox" id="university" name="affiliatedOrganizations[]" value="University"> University</label>
+
+            <label for="private"><input type="checkbox" id="private" name="affiliatedOrganizations[]" value="Private"> Private</label>
+
+             <label for="government"><input type="checkbox" id="government" name="affiliatedOrganizations[]" value="Government"> Government</label>
+
+            <label for="company"><input type="checkbox" id="company" name="affiliatedOrganizations[]" value="Company"> Company</label>
+
+            <label for="na"><input type="checkbox" id="na" name="affiliatedOrganizations[]" value="N/A"> N/A</label>
+            </div>
+            <br>
+            
+            <div class="checkbox-group">
+                <label for="useSocialMedia">Do you use social media?</label>
+                
+                <label for="useSocialMediaYes">
+                    <input type="radio" id="useSocialMediaYes" name="useSocialMedia" value="Yes" required> Yes
+                </label>
+                
+                <label for="useSocialMediaNo">
+                    <input type="radio" id="useSocialMediaNo" name="useSocialMedia" value="No" required> No
+                </label>
+            </div>
+            <br>
+            
+            <label for="socialMediaPlatforms">What social media platforms do you commonly use? (Check all that apply)</label>
+            <label for="facebook"><input type="checkbox" id="facebook" name="socialMediaPlatforms[]" value="Facebook"> Facebook</label>
+            <label for="instagram"><input type="checkbox" id="instagram" name="socialMediaPlatforms[]" value="Instagram"> Instagram</label>
+            <label for="reddit"><input type="checkbox" id="reddit" name="socialMediaPlatforms[]" value="Reddit"> Reddit</label>
+            <label for="tiktok"><input type="checkbox" id="tiktok" name="socialMediaPlatforms[]" value="TikTok"> TikTok</label>
+            <label for="youtube"><input type="checkbox" id="youtube" name="socialMediaPlatforms[]" value="Youtube"> Youtube</label>
+            <label for="discord"><input type="checkbox" id="discord" name="socialMediaPlatforms[]" value="Discord"> Discord</label>
+            <label for="snapchat"><input type="checkbox" id="snapchat" name="socialMediaPlatforms[]" value="Snapchat"> Snapchat</label>
+            <label for="pinterest"><input type="checkbox" id="pinterest" name="socialMediaPlatforms[]" value="Pinterest"> Pinterest</label>
+            <label for="twitter"><input type="checkbox" id="twitter" name="socialMediaPlatforms[]" value="Twitter"> Twitter</label>
+            <br><br>
+    
+            <label for="dailySocialMediaTime">What is the average time you spend on social media every day?</label>
+            <select id="dailySocialMediaTime" name="dailySocialMediaTime">
+                <option value="Less than an Hour">Less than an Hour</option>
+                <option value="Between 1 and 2 hours">Between 1 and 2 hours</option>
+                <option value="Between 2 and 3 hours">Between 2 and 3 hours</option>
+                <option value="Between 3 and 4 hours">Between 3 and 4 hours</option>
+                <option value="Between 4 and 5 hours">Between 4 and 5 hours</option>
+                <option value="More than 5 hours">More than 5 hours</option>
+            </select>
+            <br><br>
+    
+            <label for="socialMediaPurpose">On a scale from 1-5, How often do you find yourself using Social media without a specific purpose? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="socialMediaPurpose" name="socialMediaPurpose" min="1" max="5" step="1" onchange="updateLabel('socialMediaPurposeLabel', this.value)" required>
+            <span id="socialMediaPurposeLabel">3</span>
+            <br><br>
+    
+            <label for="socialMediaDistraction">On a scale from 1-5, How often do you get distracted by Social media when you are busy doing something? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="socialMediaDistraction" name="socialMediaDistraction" min="1" max="5" step="1" onchange="updateLabel('socialMediaDistractionLabel', this.value)" required>
+            <span id="socialMediaDistractionLabel">3</span>
+            <br><br>
+    
+            <label for="socialMediaRestless">On a scale from 1-5, do you feel restless if you haven't used Social media in a while? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="socialMediaRestless" name="socialMediaRestless" min="1" max="5" step="1" onchange="updateLabel('socialMediaRestlessLabel', this.value)" required>
+            <span id="socialMediaRestlessLabel">3</span>
+            <br><br>
+    
+            <label for="distractibility">On a scale of 1 to 5, how easily distracted are you? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="distractibility" name="distractibility" min="1" max="5" step="1" onchange="updateLabel('distractibilityLabel', this.value)" required>
+            <span id="distractibilityLabel">3</span>
+            <br><br>
+    
+            <label for="worries">On a scale of 1 to 5, how much are you bothered by worries? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="worries" name="worries" min="1" max="5" step="1" onchange="updateLabel('worriesLabel', this.value)" required>
+            <span id="worriesLabel">3</span>
+            <br><br>
+    
+            <label for="concentrationDifficulty">On a scale from 1-5, how difficult do you find it to concentrate on things? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="concentrationDifficulty" name="concentrationDifficulty" min="1" max="5" step="1" onchange="updateLabel('concentrationDifficultyLabel', this.value)" required>
+            <span id="concentrationDifficultyLabel">3</span>
+            <br><br>
+    
+            <label for="socialMediaComparisons">On a scale of 1 to 5, how often do you compare yourself to other successful people through the use of social media? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="socialMediaComparisons" name="socialMediaComparisons" min="1" max="5" step="1" onchange="updateLabel('socialMediaComparisonsLabel', this.value)" required>
+            <span id="socialMediaComparisonsLabel">3</span>
+            <br><br>
+    
+            <label for="comparisonFeelings">Following the previous question, on a scale from 1-5, how do you feel about these comparisons, generally speaking? <br>(1 = Feel really good about them, 5= Feel really bad about them)</label>
+            <input type="range" id="comparisonFeelings" name="comparisonFeelings" min="1" max="5" step="1" onchange="updateLabel('comparisonFeelingsLabel', this.value)" required>
+            <span id="comparisonFeelingsLabel">3</span>
+            <br><br>
+    
+            <label for="validationSeeking">On a scale from 1-5, how often do you look to seek validation from features of social media? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="validationSeeking" name="validationSeeking" min="1" max="5" step="1" onchange="updateLabel('validationSeekingLabel', this.value)" required>
+            <span id="validationSeekingLabel">3</span>
+            <br><br>
+    
+            <label for="depressionFrequency">On a scale from 1-5, how often do you feel depressed or down? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="depressionFrequency" name="depressionFrequency" min="1" max="5" step="1" onchange="updateLabel('depressionFrequencyLabel', this.value)" required>
+            <span id="depressionFrequencyLabel">3</span>
+            <br><br>
+    
+            <label for="interestFluctuation">On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="interestFluctuation" name="interestFluctuation" min="1" max="5" step="1" onchange="updateLabel('interestFluctuationLabel', this.value)" required>
+            <span id="interestFluctuationLabel">3</span>
+            <br><br>
+    
+            <label for="sleepIssues">On a scale of 1 to 5, how often do you face issues regarding sleep? <br>(1 = Almost never, 5= Almost Always)</label>
+            <input type="range" id="sleepIssues" name="sleepIssues" min="1" max="5" step="1" onchange="updateLabel('sleepIssuesLabel', this.value)" required>
+            <span id="sleepIssuesLabel">3</span>
+            <br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    
+        
+        <script>
+            function updateLabel(labelId, value) {
+            document.getElementById(labelId).textContent = value;
+            }
+        </script>
+        <br><br>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-info">
+                <h3>Provo Mental Health Organization</h3>
+                <p>
+                  445 W Center St <br>
+                  UT 84601, USA<br><br>
+                  <strong>Phone:</strong> +1 (801) 852-6120<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="https://twitter.com/UCHD" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="https://www.facebook.com/uchealth/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="https://www.instagram.com/provohealth/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/provo-canyon-behavioral-hospital-a49344141/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Enter name below to download our highly recommended mental health app!</h4>
+              <form action="https://www.sanvello.com/" method="get">
+                <input type="email" name="email"><input type="submit" value="Submit">
+              </form>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Provo Mental Health Organization</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+  
+    <!-- Vendor JS Files -->
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="/js/main.js"></script>
+  
+  </body>
+  
+  </html>
+
+</body>
+</html>

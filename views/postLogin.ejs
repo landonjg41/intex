@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks for Logging In</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CRaleway:400,500,600,700" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('your-background-image.jpg'); /* Add your image URL here */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        .content-block {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text inside */
+        }
+        
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            font-size: 36px; /* Adjust the font size as needed */
+            margin-bottom: 20px; /* Add margin at the bottom for spacing */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
+            margin-top: 20px;
+        }
+        .button {
+            font-family: 'Raleway', sans-serif;
+            padding: 15px 30px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #dd5b41; /* Google blue color */
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        #view-survey-btn {
+            background-color: #dd5b41; /* Google green color */
+        }
+        #create-account-btn {
+            background-color: #dd5b41; /* Google yellow color */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-block">
+        <h1>Thanks for Logging In</h1>
+        <div class="button-container">
+            <!--view survey-->
+            <form action="/surveyData" method="get">
+                <button type="submit" class="button" id="view-survey-btn">View Survey Data</button>
+            </form>
+            <!--create account-->
+            <form action="/createAccount" method="get">
+                <button type="submit" class="button" id="create-account-btn">Create Account</button>
+            </form>
+            <!-- Add the form for the Edit Profile button -->
+            <form action="/editProfile" method="get">
+                <input type="hidden" name="username" value="<%= username %>">
+                <button type="submit" class="button" id="edit-profile-btn">Edit Profile</button>
+            </form>     
+        </div>
+    </div>
+</body>
+</html>

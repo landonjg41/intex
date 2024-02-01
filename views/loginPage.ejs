@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link href="/img/provo.jpg" alt="Provo logo" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CRaleway:300,300i,400,400i,500,500i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(223, 223, 223);
+            font-family: 'Open Sans', sans-serif;
+        }
+        #header {
+            background: #333;
+            color: white;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+        }
+        .login-form {
+            padding: 2rem;
+            background: #5a5959;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-form h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #34393d;
+            color: white;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #21262a;
+        }
+    </style>
+    <title>Login Page</title>
+
+</head>
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="/">Provo Mental Health</a></h1><br>
+      <a href="/" class="logo"><img src="/img/provo.jpg" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <style>
+          .nav-link.scrollto.active {
+            background-color: lightsalmon;
+          }
+        </style>
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
+          <li><a class="nav-link scrollto " href="/surveyPage">Survey Page</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+<body>
+    <body id="hero">
+        <div class="form-container">
+            <form class="login-form" action="/loginPage" method="POST">
+                <h1 style="color: rgb(229, 229, 229);">Enter Credentials</h1>
+                <div>
+                    <label style="color: rgb(229, 229, 229);" for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label style="color: rgb(229, 229, 229);" for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <script>
+            // Check if the error variable is present
+            const error = "<%= typeof error !== 'undefined' ? error : '' %>"; // Check if error is defined
+            if (error) {
+                // Show a pop-up with the error message
+                alert(error);
+            }
+        </script>
+    <footer id="footer">
+        <!-- Your footer content here -->
+    </footer>
+    <!-- Vendor JS Files -->
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
+

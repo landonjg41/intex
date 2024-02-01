@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons (folder found in assets/img) -->
+    <img style="position: fixed; right: 10px; top: 10px;" src="" alt="provo image" class="img-fluid">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- hrefs to other pages -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+    <title>Provo Mental Health</title>
+    <!-- Add any additional styles or link to a CSS file here -->
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <h1 class="logo"><a href="/">Provo Mental Health</a></h1><br>
+        <a href="/" class="logo"><img src="/img/provo.jpg" alt="" class="img-fluid"></a>
+  
+        <nav id="navbar" class="navbar">
+          <style>
+              .nav-link.scrollto.active {
+              background-color: lightsalmon;
+              }
+              #hero:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background: linear-gradient(to bottom, rgba(169, 169, 169, 0.5), rgba(169, 169, 169, 0.5));
+              background-size: cover;
+              z-index: -1;
+              }
+            
+          </style>
+          <ul>
+            <li><a class="nav-link scrollto active" href="/loginPage">Login</a></li>
+            <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>
+            <li><a class="nav-link scrollto " href="/surveyPage">Survey Page</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+  
+      </div>
+    </header>
+  
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+        <h1>Revolutionizing Mental Wellness</h1>
+        <h2>Recommendations on how to better Mental Health through decreasing Social Media use</h2>
+        <p style="color: whitesmoke; font-size: large;">Here you can explore the impact that social media use has on mental health, 
+          access resources if you are struggling, improve your mental health through our custom recommendations, get in contact with us, and help us gather more data by filling out our survey.</p>
+        <a href="/surveyPage" class="btn-get-started scrollto">Take Our Survey</a> <!--will direct to survey page-->
+      </div>
+    </section>
+
+    <main id="main">
+  
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact" style="background-color: lightgray;">
+        <div class="container">
+  
+          <div class="section-title">
+            <!-- <span>Contact</span> -->
+            <h2>Contact</h2>
+            <p>Contact us for more information regarding how to improve your mental health</p>
+          </div>
+  
+          <div class="row" data-aos="fade-up">
+            <div class="col-lg-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-map"></i>
+                <h3>Our Address</h3>
+                <p>445 W Center St, Provo, UT 84601</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="info-box  mb-4">
+                <i class="bx bx-phone-call"></i>
+                <h3>Call Us</h3>
+                <p>+1 (801) 852-6120</p>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="row" data-aos="fade-up">
+  
+            <div class="col-lg-6 ">
+              <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12183.62462900459!2d-111.6669803!3d40.2333887!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d975541c3c4e9%3A0xc0ddbdd01a759fac!2sProvo%20City%20Hall!5e0!3m2!1sen!2sus!4v1701903223742!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+  <!-- if there's more time, figure out how to create a simple ejs file directing the user there to let them know their submission is sent -->
+            <div class="col-lg-6">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+  
+    </main>
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-info">
+                <h3>Provo Mental Health Organization</h3>
+                <p>
+                  445 W Center St <br>
+                  UT 84601, USA<br><br>
+                  <strong>Phone:</strong> +1 (801) 852-6120<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="https://twitter.com/UCHD" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="https://www.facebook.com/uchealth/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="https://www.instagram.com/provohealth/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/provo-canyon-behavioral-hospital-a49344141/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Enter Email below to download our highly recommended mental health app!</h4>
+              <form action="https://www.sanvello.com/" method="get">
+                <input type="email" name="email"><input type="submit" value="Subscribe">
+              </form>
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Provo Mental Health Organization</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+  
+    <!-- Vendor JS Files -->
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="/js/main.js"></script>
+  
+  </body>
+  
+  </html>
+
+</body>
+</html>
