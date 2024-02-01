@@ -1,9 +1,10 @@
 INTEX (Integrated Experience) is an intensive project within 
-the Information Systems program, where we had a 5-day sprint 
-to build a web application that informs the Provo community 
-about social media's mental health impacts. We crafted a dynamic 
-JavaScript front-end and a Node Express backend, supported by 
-a PostgreSQL database on AWS RDS for robust data handling.
+the Information Systems program, where our group of 4 had a 
+5-day sprint to build a web application that informs the Provo 
+community about social media's mental health impacts. We crafted 
+a dynamic JavaScript front-end and a Node Express backend, 
+supported by a PostgreSQL database on AWS RDS for robust 
+data handling.
 
 The application was deployed using AWS Elastic Beanstalk and EC2, 
 ensuring scalability and reliability. A live Tableau dashboard 
